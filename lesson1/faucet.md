@@ -39,7 +39,7 @@ Ve a **Deploy & Run Transactions** (icono “play”):
 * **ENVIRONMENT**
 
     * **JavaScript VM** (rápido para pruebas locales), o
-    * **Injected Provider – MetaMask** si quieres usar una testnet (p. ej., Sepolia).
+    * **Injected Provider – MetaMask** si quieres usar una testnet (ejemplo, Sepolia).
 * **CONTRACT:** `Faucet – Faucet.sol`
 * Clic **Deploy** y confirma.
 
@@ -61,7 +61,7 @@ Tienes dos formas sencillas:
 
 **B) Desde MetaMask**
 
-1. Asegurate estar en la red de pruebas (p. ej., Sepolia).
+1. Asegurate estar en la red de pruebas (ejemplo, Sepolia).
 2. Copia la **dirección del contrato**.
 2. En MetaMask, envía una transferencia simple al contrato con el monto deseado (sin datos).
 
@@ -77,26 +77,26 @@ Tienes dos formas sencillas:
 2. En **Deployed Contracts** → tu `Faucet`, ubica **withdraw**.
 3. Ingresa el monto en **wei** (no en ether).
 
-    * Ejemplo 0.1 ETH = `100000000000000000` wei.
+    * Ejemplo 0.001 ETH = `1000000000000000` wei.
 4. Clic **transact** y confirma.
 5. Revisa el balance de la cuenta (aumenta) y el del contrato (disminuye).
 
-> 📏 **Límite:** la llamada revierte si pides **más de 0.1 ETH** o si el contrato **no tiene saldo** suficiente.
+> 📏 **Límite:** la llamada revierte si pides **más de 0.001 ETH** o si el contrato **no tiene saldo** suficiente.
 
 ---
 
 ## Guias de prueba
 
 * **Unidades:** `1 ether = 1e18 wei`.
-* En Remix, el campo **Value** acepta `N ether` (p. ej., `0.05 ether`) al enviar fondos al contrato.
+* En Remix, el campo **Value** acepta `N ether` (ejemplo, `0.05 ether`) al enviar fondos al contrato.
 * El campo de la función `withdraw` **solo acepta wei** (usa la cifra completa).
 
 ---
 
 ## Problemas comunes
 
-* **`revert Exceeds per-call limit (0.1 ETH)`**
-  Estás intentando retirar más de 0.1 ETH. Baja la cantidad.
+* **`revert Exceeds per-call limit (0.01 ETH)`**
+  Estás intentando retirar más de 0.01 ETH. Baja la cantidad.
 * **`revert` sin mensaje al retirar**
   Usualmente **saldo insuficiente** en el contrato. Depósitale primero.
 * **Error con `transfer` al enviar a contratos**
